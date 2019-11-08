@@ -44,3 +44,24 @@ O(n)
 Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
+
+## Answer
+
+## Understand
+
+n story building means list of length n
+
+There is a value f we are looking for that dictates behavior
+for list = building, we want to find the floor where we minimize the sum of dropped + broken eggs
+
+## Plan
+
+inputs: list of length n (the building)
+output: int f (floor where sum is minimized)
+assumptions: n (or f) cant be negative
+edge cases:
+similar problems: search functions like iterative and binary search
+base cases:
+f = 0 (as a starting point)
+min = 0 (will track the min value we are looking at)
+max = len(building) (will track the max value we are looking at)
