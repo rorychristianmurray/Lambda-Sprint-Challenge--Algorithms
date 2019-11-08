@@ -14,13 +14,18 @@ a)  a = 0 # O(1)
 This gives O(n^3 + 1 + 1) = O(n^3)
 
 ```
-b)  sum = 0
-    for i in range(n):
-      j = 1
-      while j < n:
-        j *= 2
-        sum += 1
+b)  sum = 0 # O(1)
+    for i in range(n): # O(n) n increases, we increase by i operations
+      j = 1 # O(1)
+      while j < n: # O(n)
+        j *= 2 O(1)
+        sum += 1 O(1)
 ```
+
+This gives
+O(1) + O(n + 1)(O(n + 2)) = O(n^2 + 3n + 3)
+
+= O(n^2)
 
 ```
 c)  def bunnyEars(bunnies):
