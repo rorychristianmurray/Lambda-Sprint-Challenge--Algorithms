@@ -29,11 +29,15 @@ O(1) + O(n + 1)(O(n + 2)) = O(n^2 + 3n + 3)
 
 ```
 c)  def bunnyEars(bunnies):
-      if bunnies == 0:
-        return 0
+      if bunnies == 0: # O(1)
+        return 0 O(1)
 
-      return 2 + bunnyEars(bunnies-1)
+      return 2 + bunnyEars(bunnies-1) # O(n)
 ```
+
+This is an example of recursion. A call to bunnyEars giving it bunnies - 1 will function as a loop in big O, and means that as the length of bunnies increases, the amount of operations will increase linearly by n. Inside the recursive function, we only have O(1) terms, giving the big O complexity as:
+
+O(n)
 
 ## Exercise II
 
