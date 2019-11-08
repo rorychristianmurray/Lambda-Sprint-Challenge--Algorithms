@@ -131,58 +131,39 @@ class SortingRobot:
         # if light off and can_move_to_left == True
         # move to left
 
-        # move left
+        while self.light_is_on:
+            # turn light off and run scenarios
+            self.set_light_off()
+            # left index
+            # if can_move_left == False:
+            #     self.set_light_on()
+            #     self.swap_item()
+            #     self.move_right()
+            if self.can_move_right() == True:
+                if self.compare_item() == -1:
+                    # swap item
+                    print(f"swapping item and moving right")
+                    self.swap_item()
+                    self.set_light_on()
+                    self.move_right()
+                elif self.compare_item() == None:
+                    print(f"moved right on null item")
+                    self.swap_item()
+                    self.set_light_on()
+                    self.move_right()
+                elif self.compare_item() == 1:
+                    print(f"moved right to {self._position}")
+                    self.set_light_on()
+                    self.move_right()
+            elif self.can_move_right == False:
+                if self.compare_item() == None:
+                    print(f"swap to remove nulls")
+                    self.swap_item()
+                while self.can_move_left() == True:
+                    print(f"moved left to {self._position}")
+                    self.move_left()
 
-        # def left(self):
-        #     self.move_left()
-
-        # move right
-        # def right(self):
-        #     self.move_right()
-        #     if self.compare_item() == -1:
-        #          # swap item
-        #         print(f"swapping item and moving right")
-        #         self.swap_item()
-        #         self.set_light_on()
-        #     elif self.compare_item() == None or compare_item == 0:
-        #         print(f"moved right on null item")
-        #         set_light_on()
-        #         self.move_right()
-        #     elif self.compare_item() == 1:
-        #         print(f"moved right on swap")
-        #         set_light_on()
-        #         self.move_right()
-
-
-if self.light_is_on == True:
-    # turn light off and run scenarios
-    self.set_light_off()
-    # left index
-    if can_move_left == False:
-        self.set_light_on()
-        self.swap_item()
-        self.move_right()
-    elif self.can_move_right() == True:
-        if self.compare_item() == -1:
-            # swap item
-            print(f"swapping item and moving right")
-            self.swap_item()
-            self.set_light_on()
-            self.move_right()
-        elif self.compare_item() == None:
-            print(f"moved right on null item")
-            set_light_on()
-            self.move_right()
-        elif self.compare_item() == 1:
-            print(f"moved right on swap")
-            set_light_on()
-            self.move_right()
-    elif self.can_move_right == False:
-        if self.compare_item() == None:
-            print(f"swap to remove nulls")
-            self.swap_item()
-        while self.can_move_left() == True
-        self.move_left()
+        return self._list
 
 
 if __name__ == "__main__":
@@ -196,3 +177,4 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+    print(robot.sort())
