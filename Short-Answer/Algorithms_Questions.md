@@ -65,3 +65,9 @@ base cases:
 f = 0 (as a starting point)
 min = 0 (will track the min value we are looking at)
 max = len(building) (will track the max value we are looking at)
+
+## Execute
+
+First, we will divide the building list in 2 using integer division and go to the middle floor. Then we test for breakage. If no breakage, we divide in half by 2 again with current floor as min and vice versa if there is breakage. We repeat this process until isolating a floor.
+
+Alternatively, we could iterate through the list and test each floor until the egg breaks, then take the n-1 floor.
