@@ -22,23 +22,25 @@ def count_th(word):
 
     # base case
     # what do we drive to
-    print(f"word : {word[0:2]}")
-    print(f"len(word) : {len(word)}")
-    print(f"word[0] : {word[0]}")
-    if len(word) = 0:
-        print("fart")
+    # print(f"word : {word[0:2]}")
+    # print(f"len(word) : {len(word)}")
+    # print(f"word[0] : {word[0]}")
+    if len(word) <= 1:
         return 0
-    elif word[0] != "t":
-        print(f"\nword before != t : {word}\n")
-        recword = word[1::]
-        print(f"\nrecword after != t : {recword}\n")
-        return count_th(word[1::])
-    elif word[0] + word[1] == "th":
-        print(f"\nword before th : {word}\n")
-        recword = word[2::]
-        print(f"\nbase : {base}\n")
-        # base = base + 1
-        print(f"\nrecword after th : {recword}\n")
-        return count_th(word[2::])
+    elif word[0:2] == "th":
+        return 1 + count_th(word[1::])
+    else:
+        return 0 + count_th(word[1::])
 
-    pass
+
+werd1 = "thth"  # 2
+werd2 = "realtalk"  # 0
+werd3 = "ththThtH"  # 2
+
+t1 = count_th(werd1)
+# t2 = count_th(werd2)
+# t3 = count_th(werd3)
+
+print(t1)
+# print(t2)
+# print(t3)
