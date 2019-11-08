@@ -106,6 +106,8 @@ class SortingRobot:
         # them based on the comparison
 
         # base case setup
+        self.set_light_on()
+        print(f"self.light_is_on() : {self.light_is_on()} ")
 
         # *** If at zero index ***
         # turn on light
@@ -146,19 +148,18 @@ class SortingRobot:
                     self.swap_item()
                     self.set_light_on()
                     self.move_right()
-                elif self.compare_item() == None:
-                    print(f"moved right on null item")
-                    self.swap_item()
-                    self.set_light_on()
-                    self.move_right()
                 elif self.compare_item() == 1:
+                    self.move_right()
                     print(f"moved right to {self._position}")
+                else:
+                    self.swap_item()
                     self.set_light_on()
                     self.move_right()
+                    print(f"moved right to {self._position}")
             elif self.can_move_right == False:
-                if self.compare_item() == None:
-                    print(f"swap to remove nulls")
-                    self.swap_item()
+                    # if self.compare_item() == None:
+                    #     print(f"swap to remove nulls")
+                    #     self.swap_item()
                 while self.can_move_left() == True:
                     print(f"moved left to {self._position}")
                     self.move_left()
